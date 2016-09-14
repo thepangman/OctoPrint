@@ -1,3 +1,7 @@
+# ENGR302 Additions to gitignore (14 Sept)
+venv/
+src/octoprint/plugins/OctoPrint-LaserCutter
+
 src/octoprint/templates/_data/AUTHORS.md
 src/octoprint/templates/_data/CHANGELOG.md
 src/octoprint/templates/_data/SUPPORTERS.md
