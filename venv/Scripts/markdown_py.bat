@@ -1,0 +1,1 @@
+@"D:\UNIVERSITY\ENGR302\OctoPrint\venv\Scripts\python.exe" "D:\UNIVERSITY\ENGR302\OctoPrint\venv\Scripts\markdown_py" %*
