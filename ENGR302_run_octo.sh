@@ -2,6 +2,7 @@
 
 # 0. Activate the virtual environment
 echo -e "\e[24;32m0. Activating venv... \e[0m" && sleep 2
+virtualenv venv
 source ./venv/bin/activate
 echo -e "\e[24;32m0. Done. \e[0m"
 
