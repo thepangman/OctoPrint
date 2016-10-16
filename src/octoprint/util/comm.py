@@ -1246,6 +1246,9 @@ class MachineCom(object):
 					if "start" in line and not startSeen:
 						startSeen = True
 						self.sayHello()
+					elif "Grbl" in line and not startSeen:
+						startSeen = True
+						self._onConnected()
 					elif line.startswith("ok"):
 						self._onConnected()
 					elif time.time() > self._timeout:
