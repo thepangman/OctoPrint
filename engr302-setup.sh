@@ -61,7 +61,7 @@ export PWD=$old/src/octoprint/plugins/lasercutter-plugin/
 pip install -r requirements.txt
 echo -e "\e[24;32m4. Done. \e[0m"
 
-# 5. Setup the Laser Cutter Plugin
+# # 5. Setup the Laser Cutter Plugin
 echo -e "\e[24;32m5. Setting Up Plugin... \e[0m"
 sleep 4
 python setup.py install
