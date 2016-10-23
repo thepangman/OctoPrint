@@ -1,11 +1,11 @@
-#!/usr/bin/bash
+#!/bin/bash
 #----------------------------------------
 #             Peter Presents...
 # **** General Setup Instructions!!! ****
 #             (Run this 1st!)
 #----------------------------------------
 
-# 0. Check all commands are available
+###### 0. Check all commands are available
 echo -e "\e[4m0. Checking this script can actually run...\e[0m"
 comms=(compgen virtualenv pip python lsof fuser kill)
 
@@ -28,52 +28,45 @@ for i in $(seq 0 $((${#comms[@]} - 1)))
     fi
 done
 
-
-# 1. Activate the virtual environment
+###### 1. Activate the virtual environment
 echo -e "\e[24;32m1. Activating venv... \e[0m"
-sleep 2
+# sleep 2
 virtualenv ../venv
 source ../venv/bin/activate
 echo -e "\e[24;32m1. Done. \e[0m"
 
+###### 1.5 Just Print a variable to make sure it's all good
 old=$PWD
 echo "Base Directory: "$old
-sleep 4
+# sleep 4
 
 # 2. Install pip Requirements
 echo -e "\e[24;32m2. Installing pip Requirements... \e[0m"
-sleep 4
+# sleep 4
 pip install -r requirements.txt
 echo -e "\e[24;32m2. Done. \e[0m"
 
 
-# 3. Setup OctoPrint generally. Maybe swap this with the previous step?
+###### 3. Setup OctoPrint generally
 echo -e "\e[24;32m3. Setting Up OctoPrint... \e[0m"
-sleep 4
+# sleep 4
 python setup.py install
 echo -e "\e[24;32m3. Done. \e[0m"
 
-# 4. Install *Plugin* pip requirements
+###### 4. Install *Plugin* pip requirements
 echo -e "\e[24;32m4. Installing Plugin pip Requirements... \e[0m"
-sleep 4
+# sleep 4
 cd ./src/octoprint/plugins/lasercutter-plugin/
 export PWD=$old/src/octoprint/plugins/lasercutter-plugin/
 pip install -r requirements.txt
 echo -e "\e[24;32m4. Done. \e[0m"
 
-# # 5. Setup the Laser Cutter Plugin
+###### # 5. Setup the Laser Cutter Plugin
 echo -e "\e[24;32m5. Setting Up Plugin... \e[0m"
-sleep 4
+# sleep 4
 python setup.py install
 echo -e "\e[24;32m5. Done. \e[0m"
 
-
-# 5. Run OctoPrint
-# echo -e "\e[24;32m5. Running OctoPrint... \e[0m"
-# sleep 2
-# cd ../../../..
-# export PWD=$old
-# echo "Go to localhost:5000"
 
 
 # Setup Cura Engine
@@ -85,8 +78,6 @@ echo -e "\e[24;32m5. Done. \e[0m"
 
 # make          # THIS SHIT RIGHT HERE SUPER IMPORTANT!!! GOTTA COMPILE YO!
 
-
-#Go to localhost:5000 in you web browser
 
 # 5 - Configure OctoPrint
 # 5.1 - Add Cura Engine to OctoPrint
