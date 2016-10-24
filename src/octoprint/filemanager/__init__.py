@@ -30,7 +30,9 @@ def full_extension_tree():
 	result = dict(
 		# extensions for 3d model files
 		model=dict(
-			stl=ContentTypeMapping(["stl","svg"], "application/sla")
+			stl=ContentTypeMapping(["stl"], "application/sla"),
+			svg=ContentTypeMapping(["svg"], "application/sla")
+
 		),
 		# extensions for printable machine code
 		machinecode=dict(
